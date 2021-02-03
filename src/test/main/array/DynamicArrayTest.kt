@@ -16,6 +16,7 @@ import kotlin.test.assertNull
  * - remove by element
  * - contains element
  * - indexOf
+ * - clear and check if is empty
  * */
 internal class DynamicArrayTest {
 
@@ -169,5 +170,22 @@ internal class DynamicArrayTest {
         assertEquals(5, arr.indexOf(5))
         assertEquals(2, arr.indexOf(2))
         assertEquals(-1, arr.indexOf(50))
+    }
+
+    @Test
+    fun `add items and clear to check if the list is empty`() {
+        // prepare the array
+        val arr = DynamicArray<Int>(10)
+
+        // add items
+        for (i in 0 until 10) {
+            arr.add(i)
+        }
+
+        // clear list
+        arr.clear()
+
+        // todo: testing
+        assertTrue(arr.isEmpty())
     }
 }
