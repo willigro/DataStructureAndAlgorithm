@@ -17,7 +17,6 @@ class DoublyLinkedList<T> : Iterable<T?> {
             trav.data = null
             trav = next
         }
-        trav = null
         head = null
         tail = null
         size = 0
@@ -258,7 +257,6 @@ class DoublyLinkedList<T> : Iterable<T?> {
         return indexOf(data) != -1
     }
 
-    // todo: finish it
     override fun iterator(): Iterator<T?> {
         return object : Iterator<T?> {
             private var trav = head
